@@ -1,34 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using ShoppingCart.Data.Repository;
 using ShoppingCart.Models;
 using System.Diagnostics;
-using static System.Net.Mime.MediaTypeNames;
-using System.IO.Pipelines;
-using System.Xml.Linq;
-using ShoppingCart.Data.Contexts;
-using ShoppingCart.Data.Repository;
-using SQLitePCL;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ShoppingCart.Controllers
 {
-    public class HomeController : Controller
+    public class CategoryController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<ProductController> _logger;
         private readonly ProductRepository _productRepository;
         private readonly CategoryRepository _categoryRepository;
 
-        public HomeController(ILogger<HomeController> logger, IProductRepository repository, ICategoryRepository category)
+        public CategoryController(ILogger<ProductController> logger, IProductRepository repository, ICategoryRepository category)
         {
             _logger = logger;
             _productRepository = (ProductRepository)repository;
             _categoryRepository = (CategoryRepository)category;
         }
-
-        public IActionResult Index()
+        public ActionResult Index()
         {
-            return View(_productRepository.GetListAsync().Result);
+            return View(_categoryRepository.GetListAsync().Result);
         }
-
         public IActionResult Create()
         {
             return View();
@@ -36,41 +30,35 @@ namespace ShoppingCart.Controllers
 
 
         [HttpPost]
-        public IActionResult Add(Product product)
+        public IActionResult Add(Category category)
         {
-            if(ModelState.IsValid)
-            {
-                _productRepository.InsertAsync(product);
-                _productRepository.SaveChangesAsync();
-            }
+            if (ModelState.IsValid)
+                _categoryRepository.InsertAsync(category);
             return RedirectToAction("Index");
         }
 
         public IActionResult Edit(int id)
         {
-            return View(_productRepository.GetAsyncById(id).Result);
+            return View(_categoryRepository.GetAsyncById(id).Result);
         }
 
         [HttpPost]
-        public IActionResult Update(Product product)
+        public IActionResult Update(Category category)
         {
             if (ModelState.IsValid)
-            {
-                _productRepository.UpdateAsync(product);
-            }
+                _categoryRepository.UpdateAsync(category);
             return RedirectToAction("Index");
         }
 
         public IActionResult Delete(int id)
         {
-            _productRepository.RemoveAsync(_productRepository.GetAsyncById(id).Result);
+            _categoryRepository.RemoveAsync(_categoryRepository.GetAsyncById(id).Result);
             return RedirectToAction("Index");
         }
 
-
         public IActionResult Privacy()
         {
-            return View();
+            return base.View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
