@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "F/RN/2fdZF3UfJqaqHP0TPeyp9tSGi+0jXDuAnPn9fg=",
+  "Hash": "oYl0m3yJ/EiiKsJSDy9yEn4+GJj1i0rjAHgGpAlyh70=",
   "Source": "ShoppingCart",
   "BasePath": "_content/ShoppingCart",
   "Mode": "Default",
@@ -1071,12 +1071,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\1.jpeg",
+      "Identity": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\3060palit.jpg",
       "SourceId": "ShoppingCart",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\",
       "BasePath": "_content/ShoppingCart",
-      "RelativePath": "pictures/1.jpeg",
+      "RelativePath": "pictures/3060palit.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1085,15 +1085,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\pictures\\1.jpeg"
+      "OriginalItemSpec": "wwwroot\\pictures\\3060palit.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\default.png",
+      "Identity": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\3060ti.jpg",
       "SourceId": "ShoppingCart",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\",
       "BasePath": "_content/ShoppingCart",
-      "RelativePath": "pictures/default.png",
+      "RelativePath": "pictures/3060ti.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1102,15 +1102,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\pictures\\default.png"
+      "OriginalItemSpec": "wwwroot\\pictures\\3060ti.jpg"
     },
     {
-      "Identity": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\deus_ex.jpg",
+      "Identity": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\Asus prime z790.jpg",
       "SourceId": "ShoppingCart",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\",
       "BasePath": "_content/ShoppingCart",
-      "RelativePath": "pictures/deus_ex.jpg",
+      "RelativePath": "pictures/Asus prime z790.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1119,7 +1119,58 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\pictures\\deus_ex.jpg"
+      "OriginalItemSpec": "wwwroot\\pictures\\Asus prime z790.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\Asus_Prime_b760-a.jpg",
+      "SourceId": "ShoppingCart",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\",
+      "BasePath": "_content/ShoppingCart",
+      "RelativePath": "pictures/Asus_Prime_b760-a.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pictures\\Asus_Prime_b760-a.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\i5-12500.jpg",
+      "SourceId": "ShoppingCart",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\",
+      "BasePath": "_content/ShoppingCart",
+      "RelativePath": "pictures/i5-12500.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pictures\\i5-12500.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\i7-10700.jpg",
+      "SourceId": "ShoppingCart",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\",
+      "BasePath": "_content/ShoppingCart",
+      "RelativePath": "pictures/i7-10700.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pictures\\i7-10700.jpg"
     }
   ]
 }

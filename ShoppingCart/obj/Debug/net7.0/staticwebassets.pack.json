@@ -245,16 +245,28 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\1.jpeg",
-      "PackagePath": "staticwebassets\\pictures\\1.jpeg"
+      "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\3060palit.jpg",
+      "PackagePath": "staticwebassets\\pictures\\3060palit.jpg"
     },
     {
-      "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\default.png",
-      "PackagePath": "staticwebassets\\pictures\\default.png"
+      "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\3060ti.jpg",
+      "PackagePath": "staticwebassets\\pictures\\3060ti.jpg"
     },
     {
-      "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\deus_ex.jpg",
-      "PackagePath": "staticwebassets\\pictures\\deus_ex.jpg"
+      "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\Asus prime z790.jpg",
+      "PackagePath": "staticwebassets\\pictures\\Asus prime z790.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\Asus_Prime_b760-a.jpg",
+      "PackagePath": "staticwebassets\\pictures\\Asus_Prime_b760-a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\i5-12500.jpg",
+      "PackagePath": "staticwebassets\\pictures\\i5-12500.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\i7-10700.jpg",
+      "PackagePath": "staticwebassets\\pictures\\i7-10700.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ShoppingCart.Microsoft.AspNetCore.StaticWebAssets.props",
