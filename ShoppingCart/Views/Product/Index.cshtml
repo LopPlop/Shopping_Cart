@@ -1,4 +1,4 @@
-﻿@model List<Product>
+﻿@model IEnumerable<ShoppingCart.Models.Product>
 @{
     ViewData["Title"] = "Home Page";
     List<Category> categoryList = ViewBag.Categories;
@@ -8,27 +8,58 @@
     <h1 class="display-4">Products</h1>
     <table class="table table-bordered table-striped table-hover">
         <tr>
-            <th>Name</th>
-            <th>Short description</th>
-            <th>Long description</th>
-            <th>Price</th>
-            <th>Is in cart</th>
-            <th>Category</th>
-            <th>Available</th>
-            <th>Image</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LongDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsInCart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Available)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
         </tr>
         @foreach (var item in Model)
         {
-            
             <tr>
-                <td>@item.Name</td>
-                <td>@item.ShortDescription</td>
-                <td>@item.LongDescription</td>
-                <td>@item.Price</td>
-                <td>@item.IsInCart</td>
-                <td>@categoryList.First(i => i.Id == item.CategoryId).Name</td>
-                <td>@item.Available</td>
-                <td><img class="img-thumbnail" src="./pictures/@item.Image" alt="@item.Image" width="100" height="100"></td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShortDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LongDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsInCart)
+                </td>
+                <td>
+                    @categoryList.First(i => i.Id == item.CategoryId).Name
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Available)
+                </td>
+                <td>
+                    <img class="img-thumbnail" src="./pictures/@item.Image" alt="@item.Image" width="100" height="100">
+                </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>

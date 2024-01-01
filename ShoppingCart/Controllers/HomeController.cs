@@ -15,10 +15,15 @@ namespace ShoppingCart.Controllers
             _productRepository = (ProductRepository)repository;
             _categoryRepository = (CategoryRepository)category;
         }
-        public ActionResult Index()
+        public IActionResult Index()
         {
             ViewBag.Category = _categoryRepository.GetListAsync().Result;
             return View(_productRepository.GetListAsync().Result);
+        }
+        
+        public IActionResult Privacy()
+        {
+            return View();
         }
     }
 }
