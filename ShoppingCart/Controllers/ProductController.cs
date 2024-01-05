@@ -9,6 +9,8 @@ using ShoppingCart.Data.Repository;
 using SQLitePCL;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace ShoppingCart.Controllers
 {
@@ -24,9 +26,19 @@ namespace ShoppingCart.Controllers
             _productRepository = (ProductRepository)repository;
             _categoryRepository = (CategoryRepository)category;
         }
-
         public IActionResult Index()
         {
+            try
+            {
+                string role = User.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType).Value;
+                if (role != "admin")
+                    return Content($"You have no permission");
+            }
+            catch(Exception ex)
+            {
+                return Content($"You have no permission");
+            }
+
             ViewBag.Categories = _categoryRepository.GetListAsync().Result;
             return View(_productRepository.GetListAsync().Result);
         }
