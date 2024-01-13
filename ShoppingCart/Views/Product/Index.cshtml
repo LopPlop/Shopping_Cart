@@ -4,9 +4,11 @@
     List<Category> categoryList = ViewBag.Categories;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Products</h1>
-    <table class="table table-bordered table-striped table-hover">
+<div class="text-lg-start">
+    <h1>Ассортимент</h1>
+    
+    <table class="table">
+        <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
@@ -21,9 +23,6 @@
                 @Html.DisplayNameFor(model => model.Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsInCart)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.CategoryId)
             </th>
             <th>
@@ -33,6 +32,8 @@
                 @Html.DisplayNameFor(model => model.Image)
             </th>
         </tr>
+        </thead>
+        <tbody>
         @foreach (var item in Model)
         {
             <tr>
@@ -49,24 +50,24 @@
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.IsInCart)
-                </td>
-                <td>
                     @categoryList.First(i => i.Id == item.CategoryId).Name
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Available)
                 </td>
                 <td>
-                    <img class="img-thumbnail" src="./pictures/@item.Image" alt="@item.Image" width="100" height="100">
+                    <img src="./pictures/@item.Image" alt="@item.Image" width="100" height="100">
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id"><img src="./pictures/edit.png" width="20" height="20"></a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id"><img src="./pictures/trash.png" width="20" height="20"></a>
                 </td>
             </tr>
         }
+        </tbody>
     </table>
 </div>
-    <a asp-action="Create" class = "btn btn-primary">Add a new Product</a>
+<div class="text-lg-end">
+    <a asp-action="Create" class = "btn btn-primary">Добавить</a>
+</div>
 

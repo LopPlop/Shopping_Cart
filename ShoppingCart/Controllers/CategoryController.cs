@@ -26,7 +26,7 @@ namespace ShoppingCart.Controllers
         {
             try
             {
-                string role = User.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType).Value;
+                string? role = User.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType).Value;
                 if (role != "admin" || role == null)
                     return Content($"You have no permission");
             }

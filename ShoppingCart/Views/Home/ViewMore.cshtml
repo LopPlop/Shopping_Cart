@@ -1,0 +1,31 @@
+﻿@model ShoppingCart.Models.Product
+
+@{
+    ViewData["Title"] = "View";
+}
+
+
+    <div class="container mt-5">
+        <div class="row">
+        <h2>@Model.Name</h2>
+            <div class="col-md-6">
+                <img src="../../pictures/@Model.Image" alt="Товар" class="img-fluid" height="500" width="500">
+            </div>
+            <div class="col-md-6">
+                <h3 class="align-self-lg-start">@Model.Price руб.</h3>
+            <small>В наличии: <a asp-controller="Home" asp-action="Index">в @Model.Available экземплярах</a></small>
+            <p class="lead">
+                Смартфон Itel A49 позволит делиться с близкими памятными моментами, работать в режиме многозадачности и организовать полноценный досуг. 
+                Эти возможности достигаются 4-ядерным процессором с тактовой частотой 1.4 ГГц и модулем Wi-Fi 4 (802.11n), поддерживающим стабильную скорость соединения. 
+                Оставить в памяти значимые фото поможет основная двойная камера, 
+                которая автоматически подберет резкость конкретному участку кадра.
+            </p>
+            <a class="btn btn-sm btn-outline-warning" asp-controller="Cart" asp-action="Add" asp-route-id="@Model.Id">
+                <img src="../../pictures/cart.png" alt="" width="35" height="35">
+            </a>
+            </div>
+        </div>
+    
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,56 @@
+﻿@model List<ShoppingCart.Models.Cart>
+
+@{
+    ViewData["Title"] = "Просмотр корзины";
+    List<Product> productList = ViewBag.ProductList;
+    var totalSum = 0;
+}
+
+<h1>Просмотр корзины</h1>
+
+@if (Model.Count>0)
+{
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Наименование</th>
+            <th>Цена</th>
+            <th>Общая стоимость</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img src="./pictures/@productList.FirstOrDefault(i=>i.Id==item.ProductId).Image" width="100" height="100"></td>
+                <td>@productList.FirstOrDefault(i=>i.Id==item.ProductId).Name</td>
+                <td>@productList.FirstOrDefault(i=>i.Id==item.ProductId).Price руб.</td>
+                <td>@(productList.FirstOrDefault(i=>i.Id==item.ProductId).Price*item.Quantity) руб.</td>
+                @{
+                    totalSum += productList.FirstOrDefault(i => i.Id == item.ProductId).Price * item.Quantity;
+                }
+                <td>
+                    <a asp-controller="Cart" asp-action="Remove" asp-route-id="@item.ProductId"><img src="./pictures/trash.png" width="20" height="20"></a>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td class="text-lg-end" colspan="5">
+                Итого: @totalSum руб.
+            </td>
+        </tr>
+        <tr>
+            <td class="text-lg-end" colspan="5">
+                @*<a class="btn btn-danger" asp-action="Clear">Очистить корзину</a>*@
+                <form method="post" asp-controller="Orders" asp-action="Create">
+                    <button class="btn btn-primary" type="submit">Оформить заказ</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+} 
+else
+{
+    <h3 class="display-4 text-center">
+        Ваша корзина пуста
+    </h3>
+}

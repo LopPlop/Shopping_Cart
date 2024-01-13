@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using ShoppingCart.Data.Contexts;
 using ShoppingCart.Data.Repository;
 using ShoppingCart.Models;
+using System.Numerics;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +32,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICartRepository, CartRepository>();
+
+
 
 
 var app = builder.Build();
@@ -56,6 +61,7 @@ else
 
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();

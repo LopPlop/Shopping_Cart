@@ -5,6 +5,8 @@ using ShoppingCart.Data.Repository;
 using ShoppingCart.Models;
 using System.Security.Claims;
 using ShoppingCart.Data.Contexts;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace ShoppingCart.Controllers
 {
@@ -91,6 +93,35 @@ namespace ShoppingCart.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult UserView()
+        {
+            ViewBag.Roles = _context.Roles.ToList();    
+            return View(_context.Users.ToListAsync().Result);
+        }
+        
+        public IActionResult UserEdit(int id)
+        {
+            var roles = new SelectList(_context.Roles.ToList().OrderBy(c => c.Name)
+            .ToDictionary(us => us.Id, us => us.Name), "Key", "Value");
+            ViewBag.RoleList = roles;
+            return View(_context.Users.FirstOrDefault(i=>i.Id==id));
+        }
+
+        [HttpPost]
+        public IActionResult UserUpdate(User user)
+        {
+            _context.Users.Update(user);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult UserDelete(int id)
+        {
+            _context.Users.Remove(_context.Users.FirstOrDefault(i => i.Id == id));
+            _context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
     }

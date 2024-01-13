@@ -42,7 +42,7 @@
 
   <ItemGroup>
     <Folder Include="Data\Resources\" />
-    <Folder Include="Data\Migrations\" />
+    <Folder Include="Views\Order\" />
   </ItemGroup>
 
 </Project>

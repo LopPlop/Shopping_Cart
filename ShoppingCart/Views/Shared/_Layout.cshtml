@@ -1,8 +1,24 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims;
+<!DOCTYPE html>
 <html lang="en">
+
+@{
+    string role = "";
+    try
+    {
+        if(User.Claims.Count() > 0)
+        role = User?.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType).Value;
+    }
+    catch(Exception ex)
+    {
+        
+    }
+}
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#7952b3">
     <title>@ViewData["Title"] - ShoppingCart</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -20,21 +36,33 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Главная</a>
                         </li>
-                        @*@if(User.Identities.FirstOrDefault(i=>i.) != null)
-                        {*@
+                        @if (User.Identity is not null && User.Identity.IsAuthenticated && role == "admin")
+                        {
+
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Products</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Admin_Products</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Admin_Categories</a>
                             </li>
-                        @*}*@
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="UserView">Admin_Users</a>
+                            </li>
+                        }
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Конфиденциальность</a>
                         </li>
                     </ul>
+                    @if (User.Identity is not null && User.Identity.IsAuthenticated)
+                    {
+                    <ul class="navbar-nav">
+                    <li class="nav-item">
+                                <a asp-controller="Cart" asp-action="Index"><img src="../../pictures/cart.png" alt="" width="25" height="25"></a>
+                    </li>
+                    </ul>
+                    }
                     <partial name="_LoginPartial" />
                 </div>
             </div>

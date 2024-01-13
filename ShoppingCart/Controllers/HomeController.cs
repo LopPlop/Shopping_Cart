@@ -21,7 +21,17 @@ namespace ShoppingCart.Controllers
             ViewBag.Category = _categoryRepository.GetListAsync().Result;
             return View(_productRepository.GetListAsync().Result);
         }
-        
+        public IActionResult ViewMore(int id)
+        {
+            return View(_productRepository.GetAsyncById(id).Result);
+        }
+
+        public IActionResult IndexByCategory(int id)
+        {
+            ViewBag.Category = _categoryRepository.GetListAsync().Result;
+            return View(_productRepository.GetListAsync().Result.Where(i=>i.CategoryId == id).ToList());
+        }
+
         public IActionResult Privacy()
         {
             return View();

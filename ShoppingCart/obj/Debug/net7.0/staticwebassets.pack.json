@@ -261,12 +261,24 @@
       "PackagePath": "staticwebassets\\pictures\\Asus_Prime_b760-a.jpg"
     },
     {
+      "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\cart.png",
+      "PackagePath": "staticwebassets\\pictures\\cart.png"
+    },
+    {
+      "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\edit.png",
+      "PackagePath": "staticwebassets\\pictures\\edit.png"
+    },
+    {
       "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\i5-12500.jpg",
       "PackagePath": "staticwebassets\\pictures\\i5-12500.jpg"
     },
     {
       "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\i7-10700.jpg",
       "PackagePath": "staticwebassets\\pictures\\i7-10700.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Bruh\\source\\repos\\ShoppingCart\\ShoppingCart\\wwwroot\\pictures\\trash.png",
+      "PackagePath": "staticwebassets\\pictures\\trash.png"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ShoppingCart.Microsoft.AspNetCore.StaticWebAssets.props",
