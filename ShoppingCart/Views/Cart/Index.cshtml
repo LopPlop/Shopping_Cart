@@ -41,7 +41,7 @@
         <tr>
             <td class="text-lg-end" colspan="5">
                 @*<a class="btn btn-danger" asp-action="Clear">Очистить корзину</a>*@
-                <form method="post" asp-controller="Orders" asp-action="Create">
+                <form asp-controller="Order" asp-action="Index">
                     <button class="btn btn-primary" type="submit">Оформить заказ</button>
                 </form>
             </td>

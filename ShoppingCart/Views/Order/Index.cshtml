@@ -1,0 +1,96 @@
+﻿@model ShoppingCart.Models.OrderModel
+@{
+    List<Product> productList = ViewBag.ProductList;
+    List<Cart> cartList = ViewBag.CartList;
+    int totalSum = 0;
+}
+
+<section class="order-form m-3 border border-dark rounded mx-auto" style="max-width:700px">
+    <div class="container pt-4">
+        <div class="row">
+            <div class="col-12 px-4">
+                <h2>Оформить Заказ</h2>
+                <hr class="mt-1" />
+            </div>
+            <div class="col-12">
+                <form method="post" asp-action="Add" asp-controller="Order">
+                <div class="row mx-4">
+                    <div class="col-sm-6">
+                        <div class="form-outline">
+                                <input type="text" id="form1" class="form-control order-form-input" asp-for="Name" />
+                                <label class="form-label" for="form1" asp-for="Name" >Имя</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mt-2 mt-sm-0">
+                        <div class="form-outline">
+                                <input type="text" id="form2" class="form-control order-form-input" asp-for="Surname" />
+                                <label class="form-label" for="form2" asp-for="Surname">Фамилия</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="row mt-3 mx-4">
+                        <div class="col-12">
+                                <input type="text" id="form6" class="form-control order-form-input" asp-for="PhoneNumber" />
+                                <label class="form-label" for="form6" asp-for="PhoneNumber">Телефон</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3 mx-4">
+                    <div class="col-12">
+                        <div class="form-outline">
+                                <input type="text" id="form5" class="form-control order-form-input" asp-for="StreetAddress" />
+                                <label class="form-label" for="form5" asp-for="StreetAddress">Улица</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                            <input type="text" id="form5" class="form-control order-form-input" asp-for="Address"/>
+                            <label class="order-form-label" asp-for="Address">Дом/Квартира</label>
+                    </div>
+                    <div class="col-sm-6 mt-2 pe-sm-2">
+                        <div class="form-outline">
+                                <input type="text" id="form7" class="form-control order-form-input" asp-for="City"/>
+                                <label class="form-label" for="form7" asp-for="City">Город</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mt-2 ps-sm-0">
+                        <div class="form-outline">
+                                <input type="text" id="form8" class="form-control order-form-input" asp-for="Region" />
+                                <label class="form-label" for="form8" asp-for="Region">Регион</label>
+                        </div>
+                    </div>
+                </div>
+                
+                        <table class="table">
+                            <tr>
+                                <th></th>
+                                <th>Наименование</th>
+                                <th>Цена</th>
+                                <th>Общая стоимость</th>
+                            </tr>
+                            @foreach(Cart item in ViewBag.CartList )
+                            {
+                                <tr>
+                                    <td><img src="./pictures/@productList.FirstOrDefault(i=>i.Id==item.ProductId).Image" width="50" height="50"></td>
+                                    <td>@productList.FirstOrDefault(i=>i.Id==item.ProductId).Name</td>
+                                    <td>@productList.FirstOrDefault(i=>i.Id==item.ProductId).Price руб.</td>
+                                    <td>@(productList.FirstOrDefault(i => i.Id == item.ProductId).Price * item.Quantity) руб.</td>
+                                @{
+                                    totalSum += productList.FirstOrDefault(i => i.Id == item.ProductId).Price * item.Quantity;
+                                }
+                                </tr>
+                            }
+                            <tr>
+                                <td class="text-lg-end" colspan="5">
+                                    Итого: @totalSum руб.
+                                </td>
+                            </tr>
+                        </table>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" style="margin-top:100px; margin-bottom:10px" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

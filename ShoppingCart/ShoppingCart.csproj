@@ -42,7 +42,6 @@
 
   <ItemGroup>
     <Folder Include="Data\Resources\" />
-    <Folder Include="Views\Order\" />
   </ItemGroup>
 
 </Project>

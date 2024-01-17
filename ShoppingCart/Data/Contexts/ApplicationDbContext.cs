@@ -10,6 +10,7 @@ namespace ShoppingCart.Data.Contexts
         public DbSet<User> Users => Set<User>();
         public DbSet<Role> Roles => Set<Role>();
         public DbSet<Cart> Cart => Set<Cart>();
+        public DbSet<Order> Orders => Set<Order>();
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> option) 
             : base(option) 
         {
